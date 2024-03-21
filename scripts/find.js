@@ -1,3 +1,5 @@
+import { API_KEY } from "./api_key.js";
+
 const baseUrl = "https://prakity.com/api/";
 
 const messageEl = document.getElementById("message");
@@ -11,6 +13,10 @@ findUsersBtn.addEventListener("click", async () => {
 
   const response = await fetch(baseUrl + "users/", {
     method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
   });
 
   if (!response.ok) {

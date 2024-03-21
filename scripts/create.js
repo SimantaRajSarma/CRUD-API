@@ -1,3 +1,5 @@
+import { API_KEY } from "./api_key.js";
+
 const baseUrl = "https://prakity.com/api/";
 
 const messageEl = document.getElementById("message");
@@ -11,7 +13,10 @@ createUserForm.addEventListener("submit", async (event) => {
 
   const response = await fetch(baseUrl + "users/", {
     method: "POST", // For creating a user
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
     body: JSON.stringify({ name, email }),
   });
 
