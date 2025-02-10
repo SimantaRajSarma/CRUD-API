@@ -1,6 +1,6 @@
 import { API_KEY } from "./api_key.js";
 
-const baseUrl = "https://prakity.com/api/";
+const baseUrl = "127.0.0.1:8080";
 
 const messageEl = document.getElementById("message");
 const createUserForm = document.getElementById("create-user-form");
